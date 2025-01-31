@@ -7,6 +7,8 @@ import {
 } from "@/data/landing";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -78,21 +80,37 @@ export default function Home() {
                       className="rounded-full"
                     />
                     <div className="ml-4">
-                      <div className="font-semibold">
-                        {testimonial.name} 
-                      </div>
+                      <div className="font-semibold">{testimonial.name}</div>
                       <div className="text-gray-600 text-sm">
                         {testimonial.role}
                       </div>
                     </div>
                   </div>
-                  <p className=" text-gray-600">
-                    {testimonial.quote}
-                  </p>
+                  <p className=" text-gray-600">{testimonial.quote}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-blue-600">
+        <div className="container mx-auto px-4 text-center mb-4">
+          <h2 className="text-3xl font-bold mb-12 text-center text-white">
+            Ready to get started taking full control of your finances?
+          </h2>
+          <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+            Join our community of users and take the first step towards
+            financial freedom.
+          </p>
+          <Link href="/dashboard">
+            <Button
+              className="bg-white text-blue-600 hover:bg-blue-50 animate-bounce"
+              size="lg"
+            >
+              Get Started
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
