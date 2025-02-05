@@ -1,9 +1,18 @@
+import { getAccountWithTransactions } from '@/actions/accounts'
+import { notFound } from 'next/navigation'
 import React from 'react'
 
-const Account = () => {
+const AccountsPage = async ({params}) => {
+  const accountData = await getAccountWithTransactions(params.id)
+
+  if (!accountData) {
+    notFound();
+  }
   return (
-    <div>Account</div>
+    <div>
+      {params.id}
+    </div>
   )
 }
 
-export default Account
+export default AccountsPage
