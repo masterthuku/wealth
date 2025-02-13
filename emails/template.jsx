@@ -33,16 +33,16 @@ export default function EmailTemplate({
             <Section style={styles.statsContainer}>
               <div style={styles.stat}>
                 <Text style={styles.text}>Total Income</Text>
-                <Text style={styles.heading}>${data?.stats.totalIncome}</Text>
+                <Text style={styles.heading}>Ksh. {data?.stats.totalIncome}</Text>
               </div>
               <div style={styles.stat}>
                 <Text style={styles.text}>Total Expenses</Text>
-                <Text style={styles.heading}>${data?.stats.totalExpenses}</Text>
+                <Text style={styles.heading}>ksh. {data?.stats.totalExpenses}</Text>
               </div>
               <div style={styles.stat}>
                 <Text style={styles.text}>Net</Text>
                 <Text style={styles.heading}>
-                  ${data?.stats.totalIncome - data?.stats.totalExpenses}
+                  Ksh. {data?.stats.totalIncome - data?.stats.totalExpenses}
                 </Text>
               </div>
             </Section>
@@ -55,7 +55,7 @@ export default function EmailTemplate({
                   ([category, amount]) => (
                     <div key={category} style={styles.row}>
                       <Text style={styles.text}>{category}</Text>
-                      <Text style={styles.text}>${amount}</Text>
+                      <Text style={styles.text}>Ksh. {amount}</Text>
                     </div>
                   )
                 )}
@@ -65,7 +65,7 @@ export default function EmailTemplate({
             {/* AI Insights */}
             {data?.insights && (
               <Section style={styles.section}>
-                <Heading style={styles.heading}>Welth Insights</Heading>
+                <Heading style={styles.heading}>Wealth Insights</Heading>
                 {data.insights.map((insight, index) => (
                   <Text key={index} style={styles.text}>
                     • {insight}
@@ -75,7 +75,7 @@ export default function EmailTemplate({
             )}
 
             <Text style={styles.footer}>
-              Thank you for using Welth. Keep tracking your finances for better
+              Thank you for using Wealth. Keep tracking your finances for better
               financial health!
             </Text>
           </Container>
@@ -98,26 +98,22 @@ export default function EmailTemplate({
               monthly budget.
             </Text>
             <Section style={styles.statsContainer}>
-                <div style={styles.stat}>
-                    <Text style={styles.text}>Budget Amount</Text>
-                    <Text style={styles.heading}>
-                        Ksh. {data?.budgetAmount}
-                    </Text>
-                </div>
+              <div style={styles.stat}>
+                <Text style={styles.text}>Budget Amount</Text>
+                <Text style={styles.heading}>Ksh. {data?.budgetAmount}</Text>
+              </div>
 
-                <div style={styles.stat}>
-                    <Text style={styles.text}>Spent so far</Text>
-                    <Text style={styles.heading}>
-                        Ksh. {data?.totalExpenses}
-                    </Text>
-                </div>
+              <div style={styles.stat}>
+                <Text style={styles.text}>Spent so far</Text>
+                <Text style={styles.heading}>Ksh. {data?.totalExpenses}</Text>
+              </div>
 
-                <div style={styles.stat}>
-                    <Text style={styles.text}>Remaining</Text>
-                    <Text style={styles.heading}>
-                        Ksh. {data?.budgetAmount - data?.totalExpenses}
-                    </Text>
-                </div>
+              <div style={styles.stat}>
+                <Text style={styles.text}>Remaining</Text>
+                <Text style={styles.heading}>
+                  Ksh. {data?.budgetAmount - data?.totalExpenses}
+                </Text>
+              </div>
             </Section>
           </Container>
         </Body>
@@ -127,67 +123,67 @@ export default function EmailTemplate({
 }
 
 const styles = {
-    body: {
-      backgroundColor: "#f6f9fc",
-      fontFamily: "-apple-system, sans-serif",
-    },
-    container: {
-      backgroundColor: "#ffffff",
-      margin: "0 auto",
-      padding: "20px",
-      borderRadius: "5px",
-      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-    },
-    title: {
-      color: "#1f2937",
-      fontSize: "32px",
-      fontWeight: "bold",
-      textAlign: "center",
-      margin: "0 0 20px",
-    },
-    heading: {
-      color: "#1f2937",
-      fontSize: "20px",
-      fontWeight: "600",
-      margin: "0 0 16px",
-    },
-    text: {
-      color: "#4b5563",
-      fontSize: "16px",
-      margin: "0 0 16px",
-    },
-    section: {
-      marginTop: "32px",
-      padding: "20px",
-      backgroundColor: "#f9fafb",
-      borderRadius: "5px",
-      border: "1px solid #e5e7eb",
-    },
-    statsContainer: {
-      margin: "32px 0",
-      padding: "20px",
-      backgroundColor: "#f9fafb",
-      borderRadius: "5px",
-    },
-    stat: {
-      marginBottom: "16px",
-      padding: "12px",
-      backgroundColor: "#fff",
-      borderRadius: "4px",
-      boxShadow: "0 1px 2px rgba(0, 0, 0, 0.05)",
-    },
-    row: {
-      display: "flex",
-      justifyContent: "space-between",
-      padding: "12px 0",
-      borderBottom: "1px solid #e5e7eb",
-    },
-    footer: {
-      color: "#6b7280",
-      fontSize: "14px",
-      textAlign: "center",
-      marginTop: "32px",
-      paddingTop: "16px",
-      borderTop: "1px solid #e5e7eb",
-    },
-  };
+  body: {
+    backgroundColor: "#f6f9fc",
+    fontFamily: "-apple-system, sans-serif",
+  },
+  container: {
+    backgroundColor: "#ffffff",
+    margin: "0 auto",
+    padding: "20px",
+    borderRadius: "5px",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+  },
+  title: {
+    color: "#1f2937",
+    fontSize: "32px",
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: "0 0 20px",
+  },
+  heading: {
+    color: "#1f2937",
+    fontSize: "20px",
+    fontWeight: "600",
+    margin: "0 0 16px",
+  },
+  text: {
+    color: "#4b5563",
+    fontSize: "16px",
+    margin: "0 0 16px",
+  },
+  section: {
+    marginTop: "32px",
+    padding: "20px",
+    backgroundColor: "#f9fafb",
+    borderRadius: "5px",
+    border: "1px solid #e5e7eb",
+  },
+  statsContainer: {
+    margin: "32px 0",
+    padding: "20px",
+    backgroundColor: "#f9fafb",
+    borderRadius: "5px",
+  },
+  stat: {
+    marginBottom: "16px",
+    padding: "12px",
+    backgroundColor: "#fff",
+    borderRadius: "4px",
+    boxShadow: "0 1px 2px rgba(0, 0, 0, 0.05)",
+  },
+  row: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "12px 0",
+    borderBottom: "1px solid #e5e7eb",
+  },
+  footer: {
+    color: "#6b7280",
+    fontSize: "14px",
+    textAlign: "center",
+    marginTop: "32px",
+    paddingTop: "16px",
+    borderTop: "1px solid #e5e7eb",
+  },
+};

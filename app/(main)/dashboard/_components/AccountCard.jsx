@@ -1,6 +1,6 @@
 "use client"
 
-import { updateDefaulAccount } from "@/actions/accounts";
+import { updateDefaultAccount } from "@/actions/accounts";
 import {
   Card,
   CardContent,
@@ -23,7 +23,7 @@ const AccountCard = ({ account }) => {
     fn: updateDefaultFn,
     data: updatedAccount,
     error,
-  } = useFetch(updateDefaulAccount);
+  } = useFetch(updateDefaultAccount);
 
   const handleDefaultChange = async (event) => {
     event.preventDefault();
